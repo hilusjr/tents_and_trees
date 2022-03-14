@@ -1,6 +1,6 @@
 {
-  "homepage": "http://hilusjr.github.io/tents-and-trees",
-  "name": "tents-and-trees",
+  "homepage": "http://hilusjr.github.io/tents_and_trees",
+  "name": "tents_and_trees",
   "version": "1.0",
   "private": true,
   "dependencies": {
