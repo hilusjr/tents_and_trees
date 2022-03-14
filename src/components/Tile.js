@@ -1,5 +1,6 @@
 function Tile({ tileId, levels, SIZE }) {
   const TREES_ID = levels.level_1.trees_id
+  const TENTS_ID = levels.level_1.tents_id
   let tileClassName = 'field tile'
   if (TREES_ID.includes(tileId)) tileClassName = 'tree tile'
 
@@ -7,9 +8,13 @@ function Tile({ tileId, levels, SIZE }) {
 
   const handleClick = tile => {
     if (tile.target.className === 'tree tile') return
+    // console.log([1, 2, 3] === [1, 2, 3])
+    // console.log([1, 2, 3] === [1, 2, 4])
+    // console.log([1, 2, 3] === [1, 2])
     toggleTile(tile)
     check(tile, 'row')
     check(tile, 'col')
+    checkResults()
   }
 
   const toggleTile = tile => {
@@ -80,12 +85,27 @@ function Tile({ tileId, levels, SIZE }) {
     BASE_ID
   ) => {
     if (TILES_CHECKABLE.length !== TILES_CHECKED.length) {
-      document.getElementById(`${currentType}${BASE_ID}`).style.color = 'black'
+      document.getElementById(`${currentType}${BASE_ID}`).style.color = 'white'
       return
     }
     if (TENT_TILES.length === TENTS_AMOUNT)
       document.getElementById(`${currentType}${BASE_ID}`).style.color = 'gray'
     else document.getElementById(`${currentType}${BASE_ID}`).style.color = 'red'
+  }
+
+  const checkResults = () => {
+    const PLAYER_TENTS = []
+
+    for (let i = 0; i < SIZE * SIZE; i++) {
+      const tileInspected = document.getElementById(i)
+      if (tileInspected && tileInspected.className === 'tent tile') {
+        PLAYER_TENTS.push(i)
+      }
+    }
+    if (PLAYER_TENTS.length !== TENTS_ID.length) return
+    if (!PLAYER_TENTS.every((tent, index) => tent === TENTS_ID[index])) return
+    alert('You won!')
+    return
   }
 
   return <div id={tileId} className={tileClassName} onClick={handleClick}></div>
