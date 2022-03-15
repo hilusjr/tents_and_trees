@@ -3,7 +3,7 @@ import Number from './Number'
 import levels from '../json/levels.json'
 
 function Board() {
-  const SIZE = levels.level_1.column_numbers.length
+  const SIZE = levels.level_2.column_numbers.length
   const tiles = []
   for (let i = 0; i < SIZE * SIZE; i++) {
     tiles.push(i)
@@ -28,7 +28,7 @@ export default Board
 export function ColNumbers() {
   return (
     <div className="col num">
-      {levels.level_1.column_numbers.map((number, i) => (
+      {levels.level_2.column_numbers.map((number, i) => (
         <Number key={i} numId={`col${i}`} number={number} />
       ))}
     </div>
@@ -38,7 +38,7 @@ export function ColNumbers() {
 export function RowNumbers({ SIZE }) {
   return (
     <div className="row num">
-      {levels.level_1.row_numbers.map((number, i) => (
+      {levels.level_2.row_numbers.map((number, i) => (
         <Number key={i} numId={`row${i * SIZE}`} number={number} />
       ))}
     </div>

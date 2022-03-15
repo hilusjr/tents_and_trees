@@ -1,6 +1,6 @@
 function Tile({ tileId, levels, SIZE }) {
-  const TREES_ID = levels.level_1.trees_id
-  const TENTS_ID = levels.level_1.tents_id
+  const TREES_ID = levels.level_2.trees_id
+  const TENTS_ID = levels.level_2.tents_id
   let tileClassName = 'field tile'
   if (TREES_ID.includes(tileId)) tileClassName = 'tree tile'
 
@@ -84,13 +84,22 @@ function Tile({ tileId, levels, SIZE }) {
     currentType,
     BASE_ID
   ) => {
-    if (TILES_CHECKABLE.length !== TILES_CHECKED.length) {
-      document.getElementById(`${currentType}${BASE_ID}`).style.color = 'white'
+    if (TENT_TILES.length === TENTS_AMOUNT) {
+      document.getElementById(`${currentType}${BASE_ID}`).style.color = 'gray'
       return
     }
-    if (TENT_TILES.length === TENTS_AMOUNT)
-      document.getElementById(`${currentType}${BASE_ID}`).style.color = 'gray'
-    else document.getElementById(`${currentType}${BASE_ID}`).style.color = 'red'
+    if (
+      TENT_TILES.length > TENTS_AMOUNT ||
+      (TILES_CHECKABLE.length === TILES_CHECKED.length &&
+        TENT_TILES.length !== TENTS_AMOUNT)
+    )
+      document.getElementById(`${currentType}${BASE_ID}`).style.color = 'red'
+    else if (
+      TENT_TILES.length < TENTS_AMOUNT ||
+      (TILES_CHECKABLE.length === TILES_CHECKED.length &&
+        TENT_TILES.length !== TENTS_AMOUNT)
+    )
+      document.getElementById(`${currentType}${BASE_ID}`).style.color = 'white'
   }
 
   const checkResults = () => {
@@ -102,6 +111,8 @@ function Tile({ tileId, levels, SIZE }) {
         PLAYER_TENTS.push(i)
       }
     }
+    console.log(PLAYER_TENTS)
+    console.log(TENTS_ID)
     if (PLAYER_TENTS.length !== TENTS_ID.length) return
     if (!PLAYER_TENTS.every((tent, index) => tent === TENTS_ID[index])) return
     alert('You won!')
