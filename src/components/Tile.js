@@ -111,8 +111,6 @@ function Tile({ tileId, levels, SIZE }) {
         PLAYER_TENTS.push(i)
       }
     }
-    console.log(PLAYER_TENTS)
-    console.log(TENTS_ID)
     if (PLAYER_TENTS.length !== TENTS_ID.length) return
     if (!PLAYER_TENTS.every((tent, index) => tent === TENTS_ID[index])) return
     alert('You won!')
