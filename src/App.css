@@ -17,13 +17,38 @@
 }
 
 .grass {
-  background-color: rgb(94, 190, 81);
+  background-color: rgb(118, 192, 84);
 }
 .tent {
-  background-color: rgb(255, 189, 8);
+  position: relative;
+  background-color: rgb(57, 146, 16);
 }
+.tent::after {
+  content: '';
+  position: absolute;
+  top: 0%;
+  width: 100%;
+  z-index: 1;
+  aspect-ratio: 1;
+  background: url('images/tent.png');
+  background-size: 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .tree {
-  background-color: rgb(30, 71, 11);
+  position: relative;
+  background-color: rgb(42, 194, 22);
+}
+.tree::after {
+  content: '';
+  position: absolute;
+  top: -20%;
+  width: 100%;
+  z-index: 1;
+  aspect-ratio: 1;
+  background: url('images/tree.png');
+  background-size: contain;
 }
 
 .num {

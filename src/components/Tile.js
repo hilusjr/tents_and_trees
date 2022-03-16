@@ -86,7 +86,6 @@ function Tile({ tileId, levels, SIZE }) {
   ) => {
     if (TENT_TILES.length === TENTS_AMOUNT) {
       document.getElementById(`${currentType}${BASE_ID}`).style.color = 'gray'
-      return
     }
     if (
       TENT_TILES.length > TENTS_AMOUNT ||
@@ -98,6 +97,12 @@ function Tile({ tileId, levels, SIZE }) {
       TENT_TILES.length < TENTS_AMOUNT ||
       (TILES_CHECKABLE.length === TILES_CHECKED.length &&
         TENT_TILES.length !== TENTS_AMOUNT)
+    )
+      document.getElementById(`${currentType}${BASE_ID}`).style.color = 'white'
+    if (
+      TENTS_AMOUNT === 0 &&
+      TILES_CHECKABLE.length !== TILES_CHECKED.length &&
+      TENT_TILES.length === TENTS_AMOUNT
     )
       document.getElementById(`${currentType}${BASE_ID}`).style.color = 'white'
   }
