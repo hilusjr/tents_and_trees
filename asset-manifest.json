@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/tents_and_trees/static/css/main.1946f8f9.css",
+    "main.css": "/tents_and_trees/static/css/main.570a140c.css",
     "main.js": "/tents_and_trees/static/js/main.5e46a5f0.js",
     "static/js/787.398deb9b.chunk.js": "/tents_and_trees/static/js/787.398deb9b.chunk.js",
     "static/media/tree.png": "/tents_and_trees/static/media/tree.46b02d7e758fc4246545.png",
     "static/media/tent.png": "/tents_and_trees/static/media/tent.4d431f24c681ba927735.png",
     "index.html": "/tents_and_trees/index.html",
-    "main.1946f8f9.css.map": "/tents_and_trees/static/css/main.1946f8f9.css.map",
+    "main.570a140c.css.map": "/tents_and_trees/static/css/main.570a140c.css.map",
     "main.5e46a5f0.js.map": "/tents_and_trees/static/js/main.5e46a5f0.js.map",
     "787.398deb9b.chunk.js.map": "/tents_and_trees/static/js/787.398deb9b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1946f8f9.css",
+    "static/css/main.570a140c.css",
     "static/js/main.5e46a5f0.js"
   ]
 }
