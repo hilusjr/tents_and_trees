@@ -11,7 +11,7 @@
   aspect-ratio: 1;
   margin: 0.1rem;
   border: 1px solid rgb(34, 34, 34);
-  border-radius: 0.5rem;
+  border-radius: 10%;
   box-sizing: border-box;
   background-color: rgb(51, 51, 51);
 }
@@ -71,8 +71,9 @@
 
 @media only screen and (max-width: 768px) {
   .board {
-    margin: 20vmax auto;
-    height: 70vmin;
+    margin: 20vmax 0 auto 15vmin;
+    height: auto;
+    width: 80vmin;
   }
 
   .num {
@@ -82,6 +83,6 @@
 
   .row {
     top: 0;
-    left: -15%;
+    left: -10vmin;
   }
 }
